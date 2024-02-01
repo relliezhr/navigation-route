@@ -62,6 +62,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_3d_choice_chip:
+    dependency: "direct main"
+    description:
+      name: flutter_3d_choice_chip
+      sha256: a7a3b1d19af1c5f79d831728f000f5ad6cf2fa6e47c6a4a16824883ded5a1fe3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.4"
   flutter_lints:
     dependency: "direct dev"
     description:
