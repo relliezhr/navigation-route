@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nav_rute/models/item.dart';
+import 'package:share/share.dart';
 
 class itemPage extends StatelessWidget {
   @override
@@ -10,6 +11,7 @@ class itemPage extends StatelessWidget {
       appBar: AppBar(
         title:
             const Text("Item Details", style: TextStyle(color: Colors.white)),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
@@ -34,6 +36,23 @@ class itemPage extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text("${itemArgs.desc}", style: const TextStyle(fontSize: 14)),
+            const Padding(padding: EdgeInsets.only(top: 10.0, bottom: 4.0)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(52)),
+                    onPressed: () {
+                      final urlPreview = itemArgs.img;
+                      Share.share('Check out this link:\n\n$urlPreview');
+                    },
+                    child: const Text(
+                      'Share',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    )),
+              ],
+            )
           ],
         ),
       ),

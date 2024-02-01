@@ -35,7 +35,8 @@ class homePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.shopping_basket, color: Colors.white),
+        leading: const Icon(Icons.shopping_basket),
+        iconTheme: const IconThemeData(color: Colors.white),
         title: const Text("Belanjain", style: TextStyle(color: Colors.white)),
       ),
       body: Container(
@@ -56,14 +57,15 @@ class homePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(10),
                   margin: const EdgeInsets.all(8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.network(item.img),
                       const SizedBox(height: 8),
-                      Text(item.name),
+                      Text(item.name,
+                          style: const TextStyle(fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
                       Text(
                         "Rp.${item.price.toString()}",
