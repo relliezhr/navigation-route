@@ -37,22 +37,18 @@ class itemPage extends StatelessWidget {
             ),
             Text("${itemArgs.desc}", style: const TextStyle(fontSize: 14)),
             const Padding(padding: EdgeInsets.only(top: 10.0, bottom: 4.0)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        minimumSize: const Size.fromHeight(52)),
-                    onPressed: () {
-                      final urlPreview = itemArgs.img;
-                      Share.share('Check out this link:\n\n$urlPreview');
-                    },
-                    child: const Text(
-                      'Share',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    )),
-              ],
-            )
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(52)),
+              onPressed: () {
+                final urlPreview = itemArgs.img;
+                Share.share('Check out this link:\n\n$urlPreview');
+              },
+              child: const Text(
+                'Share',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),
